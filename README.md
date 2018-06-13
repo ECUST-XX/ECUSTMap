@@ -202,7 +202,7 @@ var mapStyle = {
 ECUSTMap.map.setMapStyle(mapStyle);
 ```
 
-## 文件信息
+## 文件说明
 map.js ECUSTMap地图主体
 mapv.js mapv v2.0.23
 奉贤校区建筑坐标.json 奉贤校区建筑坐标(使用标准为BD-09)
