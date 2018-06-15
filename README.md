@@ -103,7 +103,7 @@ var point = ECUSTMap.addPoint(lng, lat, value, "./icon_url", "XuHui");
 删除标记点
 > deleteAllPoints()
 ```
-// 删除所有标记点
+// 删除所有标记点，删除时将隐藏所有标记点
 
 ECUSTMap.deleteAllPoints()
 ```
@@ -116,12 +116,12 @@ ECUSTMap.deleteAllPoints()
 ECUSTMap.showPoints()
 ```
 
-移除标记点
-> removePoints()
+隐藏标记点
+> hidePoints()
 ```
-// 删除所有标记点，同deleteAllPoints()
+// 隐藏所有标记点
 
-ECUSTMap.removePoints()
+ECUSTMap.hidePoints()
 ```
 
 标记点的信息内容
@@ -151,9 +151,17 @@ ECUSTMap.addMsg(reviewPoint, ECUSTMap.msg("标题", "内容", "./img_url"));
 // lng: 经度 [double]
 // lat: 维度 [double]
 // count: 热力点的值 [int]
-// 在地图中添加热力点，用于显示热力图与者蜂窝图。标记点与热力点分开存放，如果需要同时显示标记点与热力点，则需要同时添加两种点
+// 在地图中添加热力点，用于显示热力图与蜂窝图。标记点与热力点分开存放，如果需要同时显示标记点与热力点，则需要同时添加两种点
 
 ECUSTMap.addHeatPoint(lng, lat, value);
+```
+
+删除热力点
+> deleteHeatPoints()
+```
+// 删除所有热力点，删除时将关闭热力图与蜂窝图
+
+ECUSTMap.deleteHeatPoints();
 ```
 
 显示热力图

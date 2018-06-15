@@ -191,14 +191,14 @@ function ECUSTMap(id) {
 
     // 删除标记点
     _this.deleteAllPoints = function () {
-        _this.removePoints();
+        _this.hidePoints();
         _this.XuHui.points = [];
         _this.FengXian.points = [];
         _this.JinShan.points = [];
     };
 
-    // 移除标记点
-    _this.removePoints = function () {
+    // 隐藏标记点
+    _this.hidePoints = function () {
 
         for (var i = 0; i <= _this.XuHui.points.length - 1; i++) {
             map.removeOverlay(_this.XuHui.points[i]);
@@ -244,6 +244,13 @@ function ECUSTMap(id) {
         });
     };
 
+    // 删除热力点
+    _this.deleteHeatPoints = function () {
+        _this.closeHeatMap();
+        _this.closeHoneycombMap();
+        _this.allHeatPoints = [];
+    };
+
     // 显示热力图
     _this.showHeatMap = function (max) {
         var dataSet = new mapv.DataSet(_this.allHeatPoints);
@@ -268,7 +275,9 @@ function ECUSTMap(id) {
 
     // 关闭热力图
     _this.closeHeatMap = function () {
-        HeatMapOverlay.hide();
+        if (HeatMapOverlay != null) {
+            HeatMapOverlay.hide();
+        }
     };
 
 
@@ -315,7 +324,9 @@ function ECUSTMap(id) {
 
     // 隐藏蜂窝图
     _this.closeHoneycombMap = function () {
-        HoneycombMap.hide();
+        if (HoneycombMap != null) {
+            HoneycombMap.hide();
+        }
     };
 
 
